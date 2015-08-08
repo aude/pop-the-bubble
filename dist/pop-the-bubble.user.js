@@ -26,8 +26,8 @@
 // @match       https://blog.codinghorror.com/*
 // @match       http://tek.no/*
 // @match       https://tek.no/*
-// @updateURL   https://github.com/aude/pop-the-bubble/raw/master/dist/pop-the-bubble.meta.js
-// @downloadURL https://github.com/aude/pop-the-bubble/raw/master/dist/pop-the-bubble.user.js
+// @updateURL   https://github.com/aude/pop-the-bubble.user.js/raw/master/dist/pop-the-bubble.meta.js
+// @downloadURL https://github.com/aude/pop-the-bubble.user.js/raw/master/dist/pop-the-bubble.user.js
 // @grant       none
 // @version     150807
 // ==/UserScript==
