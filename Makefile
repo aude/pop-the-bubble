@@ -1,5 +1,5 @@
 # get name of containing directory
-project := $(shell basename "$(realpath $(shell dirname "$(lastword $(MAKEFILE_LIST))"))" | sed 's/.user.js//g')
+project := $(shell basename "$(realpath $(shell dirname "$(lastword $(MAKEFILE_LIST))"))" | sed 's/\.user\.js$$//g')
 version = $(shell grep -oP '\/\/ @version\s+\K\S+' "dist/${project}.meta.js")
 
 dist: dist/${project}.user.js dist/${project}.meta.js
