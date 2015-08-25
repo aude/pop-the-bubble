@@ -8,12 +8,14 @@
 // @include	/^https?://(www\.)?arstechnica\.(com|co\.uk)/.*/
 // @include	/^https?://blog\.codinghorror\.com/.*/
 // @include	/^https?://(www\.)?tek\.no/.*/
+// @include	/^https?://torrentfreak\.com/.*/
 // @domain	phoronix.com
 // @domain	lifehacker.com
 // @domain	arstechnica.com
 // @domain	arstechnica.co.uk
 // @domain	blog.codinghorror.com
 // @domain	tek.no
+// @domain	torrentfreak.com
 // @match	http://phoronix.com/*
 // @match	https://phoronix.com/*
 // @match	http://lifehacker.com/*
@@ -26,13 +28,15 @@
 // @match	https://blog.codinghorror.com/*
 // @match	http://tek.no/*
 // @match	https://tek.no/*
+// @match	https://torrentfreak.com/*
 // @updateURL	https://github.com/aude/pop-the-bubble.user.js/raw/master/dist/pop-the-bubble.meta.js
 // @downloadURL https://github.com/aude/pop-the-bubble.user.js/raw/master/dist/pop-the-bubble.user.js
 // @grant	none
-// @version	20150807
+// @version	20150825
 // ==/UserScript==
 
 // ==ChangeLog==
+// @history	20150825	added TorrentFreak support
 // @history	20150807	GitHub migration
 // @history	20150804	added Ars Technica support
 // @history	20150718	updated for Phoronix' new theme
@@ -55,7 +59,7 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License
+You may have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 @licend
 */

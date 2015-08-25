@@ -8,12 +8,14 @@
 // @include	/^https?://(www\.)?arstechnica\.(com|co\.uk)/.*/
 // @include	/^https?://blog\.codinghorror\.com/.*/
 // @include	/^https?://(www\.)?tek\.no/.*/
+// @include	/^https?://torrentfreak\.com/.*/
 // @domain	phoronix.com
 // @domain	lifehacker.com
 // @domain	arstechnica.com
 // @domain	arstechnica.co.uk
 // @domain	blog.codinghorror.com
 // @domain	tek.no
+// @domain	torrentfreak.com
 // @match	http://phoronix.com/*
 // @match	https://phoronix.com/*
 // @match	http://lifehacker.com/*
@@ -26,8 +28,9 @@
 // @match	https://blog.codinghorror.com/*
 // @match	http://tek.no/*
 // @match	https://tek.no/*
+// @match	https://torrentfreak.com/*
 // @updateURL	https://github.com/aude/pop-the-bubble.user.js/raw/master/dist/pop-the-bubble.meta.js
 // @downloadURL https://github.com/aude/pop-the-bubble.user.js/raw/master/dist/pop-the-bubble.user.js
 // @grant	none
-// @version	20150807
+// @version	20150825
 // ==/UserScript==
