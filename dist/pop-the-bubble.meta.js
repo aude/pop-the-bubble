@@ -32,5 +32,6 @@
 // @updateURL	https://github.com/aude/pop-the-bubble.user.js/raw/master/dist/pop-the-bubble.meta.js
 // @downloadURL https://github.com/aude/pop-the-bubble.user.js/raw/master/dist/pop-the-bubble.user.js
 // @grant	none
-// @version	20150825
+// @run-at	document-start
+// @version	20160601
 // ==/UserScript==

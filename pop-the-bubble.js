@@ -32,10 +32,12 @@
 // @updateURL	https://github.com/aude/pop-the-bubble.user.js/raw/master/dist/pop-the-bubble.meta.js
 // @downloadURL https://github.com/aude/pop-the-bubble.user.js/raw/master/dist/pop-the-bubble.user.js
 // @grant	none
-// @version	20150825
+// @run-at	document-start
+// @version	20160601
 // ==/UserScript==
 
 // ==ChangeLog==
+// @history	20160601	moved from iterative JS to declarative CSS
 // @history	20150825	added TorrentFreak support
 // @history	20150807	GitHub migration
 // @history	20150804	added Ars Technica support
@@ -65,69 +67,25 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 // ==/License==
 
-/**
- * built upon Phoronix External Link Finder by samcamwilliams <https://userscripts.org/scripts/show/185250>
-**/
+// original idea from Phoronix External Link Finder by samcamwilliams <https://userscripts.org/scripts/show/185250>
 
 (function () {
-    var i, j, c, d,
-        tmp,
-        cids = [
-            'phxcms_content_phx'
-        ],
-        cclasses = [
-            'post-wrapper',
-            'article',
-            'full'
-        ],
-        ctags = [
-            'article'
-        ],
-        containers = [],
-        links = [];
+	// select links to a new site
+	var linkSelector = 'a:not([href*="' + window.location.host + '"]):not([href^="/"]):not([href^="?"]):not([href^="#"])';
 
-    // ids
-    for (i = 0, c = cids.length; i < c; ++i) {
-        tmp = document.getElementById(cids[i]);
-        if (tmp) {
-            containers.push(tmp);
-        }
-    }
-    // classes
-    for (i = 0, c = cclasses.length; i < c; ++i) {
-        tmp = document.getElementsByClassName(cclasses[i]);
-        if (tmp.length) {
-            for (j = 0, d = tmp.length; j < d; ++j) {
-                containers.push(tmp[j]);
-            }
-        }
-    }
-    // tags
-    for (i = 0, c = ctags.length; i < c; ++i) {
-        tmp = document.getElementsByTagName(ctags[i]);
-        if (tmp.length) {
-            for (j = 0, d = tmp.length; j < d; ++j) {
-                containers.push(tmp[j]);
-            }
-        }
-    }
+	var containerSelectors = [
+		'article',
+		'.article',
+		'.full',
+		'.post-wrapper',
+		'#phxcms_content_phx'
+	];
 
-    // get links inside containers
-    for (i = 0, c = containers.length; i < c; ++i) {
-        tmp = containers[i].getElementsByTagName('a');
-        if (tmp.length) {
-            for (j = 0, d = tmp.length; j < d; ++j) {
-                links.push(tmp[j]);
-            }
-        }
-    }
-
-    // process links
-    for (var i = 0; i < links.length; i++) {
-        if (links[i].href.indexOf(window.location.host) === -1) {
-            // links[i].style.color = '#006FFF';
-            links[i].style.color = '#005FFF';
-            // links[i].style.color = 'blue';
-        }
-    }
+	var styleElement = document.createElement('style');
+	styleElement.setAttribute('type', 'text/css');
+	styleElement.textContent =
+		containerSelectors.join(' ' + linkSelector + ',') + '{' +
+		'    color: #005FFF !important;' +
+		'}';
+	document.getElementsByTagName('head')[0].appendChild(styleElement);
 }());
